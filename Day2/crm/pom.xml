@@ -21,4 +21,11 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>artifactory</id>
+			<url>http://localhost:8081/artifactory/tektutor</url>
+		</repository>
+	</distributionManagement>
 </project>
