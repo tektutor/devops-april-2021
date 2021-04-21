@@ -42,7 +42,7 @@ mvn package
 
 This requires adding distributionManagement tag in pom.xml file
 
-'''
+```
 
 <distributionManagement>
      <repository>
@@ -51,11 +51,11 @@ This requires adding distributionManagement tag in pom.xml file
      </repository>
 </distributionManagement>
 
-'''
+```
 
 You also need to provide the artifactory credential in settings.xml file
 
-'''
+```
 
 <servers>
    <server>
@@ -65,4 +65,4 @@ You also need to provide the artifactory credential in settings.xml file
    </server>
 </servers>
 
-'''
+```
