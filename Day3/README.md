@@ -104,15 +104,27 @@ Create a file named install-nginx.yml with the below code
     - name: Install nginx
       apt: name=nginx state=latest update_cache=yes
       
+ # service module has a bug related to service when ansible nodes are docker container, 
+ # hence using shell module instead.
  #  - name: Start nginx web server
  #    service: name=nginx state=started enabled=yes
- # service module has a bug related to service when ansible nodes are docker container, hence using shell module instead.
  
     - name: Start nginx web server
       shell:  service nginx start 
-```
+      
+    - name: Configure nginx web root folder
+      copy: src=default dest=/etc/nginx/sites-available/default
 
-Execute the playbook with the below command
+    - name: Create the custom web root folder
+      file: path=/var/html state=directory mode=777 
+
+    - name: Deploy custom html page into nginx web server
+      template: src=index.html.j2 dest=/var/html/index.html
+
+    - name: Restart nginx web server to apply above configuration changes
+      shell:  service nginx restartExecute the playbook with the below command
+'''
+You may run the playbook with the below command
 ```
 ansible-playbook -i hosts install-nginx.yml
 ```
