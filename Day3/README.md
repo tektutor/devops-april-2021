@@ -41,8 +41,13 @@ docker ps
 ### Test if you can do ssh to those new containers
 ```
 ssh -p 2001 root@localhost
+```
+You may type exit to come of the ubuntu1 container.
+
+```
 ssh -p 2002 root@localhost
 ```
+You may type exit to come of the ubuntu2 container.
 
 You need type 'yes' when it prompts for "Are you sure you want to continue connecting (yes/no)?" question.
 
