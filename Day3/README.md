@@ -76,3 +76,20 @@ ansible -i hosts ubuntu1 -m ping
 ansible -i hosts ubuntu2 -m ping
 ansible -i hosts all -m shell -a "hostname -i"
 ```
+
+### Writing a simple ansible playbook
+
+You need to create file called ping.yml. The name of the file is user-defined.
+
+```
+- name: Simple ping playbook
+  hosts:  all
+  tasks:
+    - name: Ping the ansible node
+      ping:
+ ```
+ 
+ You may now execute the ansible playbook as shown below
+ ```
+ ansible-playbook -i hosts ping.yml
+ ```
