@@ -42,13 +42,16 @@ docker ps
 ```
 ssh -p 2001 root@localhost
 ```
+You need type 'yes' when it prompts for "Are you sure you want to continue connecting (yes/no)?" question.
+
 You may type exit to come of the ubuntu1 container.
 
 ```
 ssh -p 2002 root@localhost
 ```
+You need type 'yes' when it prompts for "Are you sure you want to continue connecting (yes/no)?" question.
+
 You may type exit to come of the ubuntu2 container.
 
-You need type 'yes' when it prompts for "Are you sure you want to continue connecting (yes/no)?" question.
 
 The expectation here is, ssh shouldn't prompt for password as we are using key-pair for login authentication.
