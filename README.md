@@ -29,7 +29,7 @@ mvn help:describe -Dcmd=site
 
 ### Finding the goals supported by a plugin
 ```
-mvn help:describbe -Dplugin=org.apache.maven.plugins:maven-compiler-plugin:3.1 -Ddetail
+mvn help:describe -Dplugin=org.apache.maven.plugins:maven-compiler-plugin:3.1 -Ddetail
 ```
 
 ### Just compile all the files in src/main/java and its sub-directories
