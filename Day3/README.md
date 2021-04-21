@@ -103,6 +103,9 @@ Create a file named install-nginx.yml with the below code
   tasks:
     - name: Install nginx
       apt: name=nginx state=latest update_cache=yes
+      
+    - name: Start nginx web server
+      service: name=nginx state=started enabled=yes
 ```
 
 Execute the playbook with the below command
