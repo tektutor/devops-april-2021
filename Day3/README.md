@@ -26,3 +26,22 @@ Check if the newly built image is listed
 ```
 docker images
 ```
+
+### Creating containers using our new ubuntu ansible image
+```
+docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 tektutor/ansible-ubuntu
+docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 tektutor/ansible-ubuntu
+```
+
+### Check if the ubuntu1 and ubuntu2 containers are running
+```
+docker ps
+```
+
+### Test if you can do ssh to those new containers
+```
+ssh -p 2001 root@localhost
+ssh -p 2002 root@localhost
+```
+
+You need type 'yes' when it prompts for 'Do you want to connect' question.
