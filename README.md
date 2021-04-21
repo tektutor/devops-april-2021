@@ -7,8 +7,18 @@
 -  is an technology agnostic build tool
    - by default works as a build tool for Java based projects
    - however, can be customized to support Python,C#, Scala,C/C++, etc programming languages
+-  everything in Maven are named in terms of Maven coordinates
+   -  groupId (Reverse domain name of your organization - eg: org.tektutor)
+   -  artifactId (name of jar,war,ear,zip, etc)
+   -  version (version of your jar,war,ear,etc)
+- support 3 types of repositories
+  - local repository ( can be located at User Home directory .m2 folder in Windows/Unix/Linux/Mac )
+  - private repository ( can be setup using Sonatype Nexus or JFrog Artifactory, etc )
+  - central repository ( http://search.maven.org - for open source third party libraries/plugins )
 -  supports convention over configuration
-   - Maven 
+   - if we follow Maven conventions, we can use most of the Maven features without much configurations
+   - in case of legacy projects or for other reasons if you can't follow Maven recommended directory structure then
+     maven allows configuring pom.xml, settings.xml to override its defaut behaviour
 
 #Commonly used Apache Maven commands
 
