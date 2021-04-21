@@ -123,7 +123,7 @@ Create a file named install-nginx.yml with the below code
 
     - name: Restart nginx web server to apply above configuration changes
       shell:  service nginx restartExecute the playbook with the below command
-'''
+```
 You may run the playbook with the below command
 ```
 ansible-playbook -i hosts install-nginx.yml
