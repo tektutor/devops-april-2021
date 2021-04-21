@@ -21,7 +21,7 @@
      maven allows configuring pom.xml, settings.xml to override its defaut behaviour
 
 ## Maven high level architecture
-![Maven Architecture](maven-architecture.png)
+![Maven Architecture](maven-architecture-color.png)
 
 # Commonly used Apache Maven commands
 
