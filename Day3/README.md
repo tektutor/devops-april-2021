@@ -93,3 +93,19 @@ You need to create file called ping.yml. The name of the file is user-defined.
  ```
  ansible-playbook -i hosts ping.yml
  ```
+
+### Writing a decent complex ansible playbook
+Create a file named install-nginx.yml with the below code
+
+```
+- name: Install nginx in ansible nodes
+  hosts: all
+  tasks:
+    - name: Install nginx
+      apt: name=nginx state=latest update_cache=yes
+```
+
+Execute the playbook with the below command
+```
+ansible-playbook -i hosts install-nginx.yml
+```
