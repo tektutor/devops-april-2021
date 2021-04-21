@@ -30,6 +30,9 @@
 mvn --version
 ```
 
+### Maven Lifecycle
+![Maven Lifecycle](maven-lifecycle-color.png)
+
 ### Listing Maven default life-cycle phases
 ```
 mvn help:describe -Dcmd=compile
