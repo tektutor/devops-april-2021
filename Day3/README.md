@@ -116,3 +116,33 @@ Execute the playbook with the below command
 ```
 ansible-playbook -i hosts install-nginx.yml
 ```
+
+You may test if you are able to access the web pages using the IP address of the containers
+```
+curl http://172.17.0.2:80
+curl http://172.17.0.3
+curl http://172.17.0.4
+curl http://172.17.0.5
+```
+You may have to find the IP Addresses of your containers and modify the above IP Addresses accordingly.  In my case,
+```
+ubuntu1 container's IP is 172.17.0.2
+ubuntu2 container's IP is 172.17.0.3
+ubuntu3 container's IP is 172.17.0.4
+ubuntu4 container's IP is 172.17.0.5
+```
+
+In case you forgot the command to. find IP address of docker containers, please check below
+```
+docker inspect ubuntu1 | grep IPA
+docker inspect -f {{.NetworkSettings.IPAddress}} ubuntu1
+```
+You may use any one of the above docker commands.
+
+In case, if wish to find container IP using ansible adhoc command, please check below.
+```
+ansible -i hosts ubuntu1 -m shell -a "hostname -i"
+ansible -i hosts ubuntu2 -m shell -a "hostname -i"
+ansible -i hosts ubuntu3 -m shell -a "hostname -i"
+ansible -i hosts ubuntu4 -m shell -a "hostname -i"
+```
