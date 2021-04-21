@@ -1,6 +1,16 @@
 # devops-april-2021
 
-#Commonly used maven commands
+# Maven Overview
+-  is an Opensource build tool from Apache Foundation
+-  is an alternate to Apache Ant, Gradle, etc
+-  supports dependency management
+-  is an technology agnostic build tool
+   - by default works as a build tool for Java based projects
+   - however, can be customized to support Python,C#, Scala,C/C++, etc programming languages
+-  supports convention over configuration
+   - Maven 
+
+#Commonly used Apache Maven commands
 
 ### Checking maven version
 ```
