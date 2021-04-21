@@ -57,12 +57,18 @@ You may type exit to come of the ubuntu2 container.
 The expectation here is, ssh shouldn't prompt for password as we are using key-pair for login authentication.
 
 ### Inventory file (Filename - hosts)
+You need to create a file called hosts and type below contents
+
+```
 [all]
 ubuntu1 ansible_host=localhost ansible_port=2001 ansible_user=root ansible_private_key_file=/root/.ssh/id_rsa
 ubuntu2 ansible_host=localhost ansible_port=2002 ansible_user=root ansible_private_key_file=/root/.ssh/id_rsa
+```
 
 ### Running ansible adhoc command
+```
 ansible -i hosts all -m ping
 ansible -i hosts ubuntu1 -m ping
 ansible -i hosts ubuntu2 -m ping
 ansible -i hosts all -m shell -a "hostname -i"
+```
