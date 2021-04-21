@@ -100,6 +100,8 @@ Create a file named install-nginx.yml with the below code
 ```
 - name: Install nginx in ansible nodes
   hosts: all
+  vars_files:
+    - nginx_vars.yml
   tasks:
     - name: Install nginx
       apt: name=nginx state=latest update_cache=yes
