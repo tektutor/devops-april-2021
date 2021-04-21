@@ -57,6 +57,10 @@ You may type exit to come of the ubuntu2 container.
 The expectation here is, ssh shouldn't prompt for password as we are using key-pair for login authentication.
 
 ### Inventory file (Filename - hosts)
+```
+cd ..
+```
+Assumption is, you are in Day3 folder.
 You need to create a file called hosts and type below contents
 
 ```
