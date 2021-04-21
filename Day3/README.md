@@ -45,3 +45,4 @@ ssh -p 2002 root@localhost
 ```
 
 You need type 'yes' when it prompts for 'Do you want to connect' question.
+The expectation here is, ssh shouldn't prompt for password as we are using key-pair for login authentication.
