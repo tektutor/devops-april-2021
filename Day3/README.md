@@ -139,7 +139,7 @@ docker inspect -f {{.NetworkSettings.IPAddress}} ubuntu1
 ```
 You may use any one of the above docker commands.
 
-In case, if wish to find container IP using ansible adhoc command, please check below.
+In case, if you wish to find container IP using ansible adhoc command, please check below.
 ```
 ansible -i hosts ubuntu1 -m shell -a "hostname -i"
 ansible -i hosts ubuntu2 -m shell -a "hostname -i"
