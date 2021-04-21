@@ -1,0 +1,15 @@
+<html>
+
+	<head>
+		<title>Welcome to  {{welcome_msg}}</title>	
+	</head>
+
+	<body>
+		<h3>Hostname is {{ansible_hostname}}</h3>  
+ 		<h3>Linux distribution is {{ ansible_distribution  }} </h3>
+		<h3>Linux distribtuion version is {{ ansible_distribution_version  }} </h3>
+		<h3>Configured by  {{conf_mgr_tool}}</h3>
+                <h3>Provisioned by  {{provisioner_tool}}</h3>
+	</body>
+
+</html>

@@ -1,0 +1,31 @@
+- name: This playbook will install, configure and deploy a custom web page into nginx web server
+  hosts: all
+  vars_files:
+    - nginx_vars.yml
+  tasks:
+    - name: Install nginx
+      apt: name=nginx state=latest update_cache=yes
+
+#   - name: Start nginx web server
+#     service: name=nginx state=started enabled=yes
+#   Due to a known bug in Ansible, ansible isn't able to start service in Ubuntu docker container.
+#   The service module uses 'service nginx start' command in Debian/Ubuntu and 'systemctl start nginx'
+#   command in RedHat(systemd) based OS. Since our lab machine is a CentOS box, and service command
+#   doesn't seem to know how to manage the service in Ubuntu container. This issue only happens in
+#   ansible node containers, and doesn't happen in Cloud based VMs or On-Premise servers, local VMs.
+#   As a workaound, let's use shell module to start the service. Shell module is not idempotent.
+#
+    - name: Start nginx web server
+      shell: service nginx start
+
+    - name: Configure nginx web root folder
+      copy: src=default dest=/etc/nginx/sites-available/default
+
+    - name: Create the custom web root folder
+      file: path=/var/html state=directory mode=777 
+
+    - name: Deploy custom html page into nginx web server
+      template: src=index.html.j2 dest=/var/html/index.html
+
+    - name: Restart nginx web server to apply above configuration changes
+      shell:  service nginx restart
