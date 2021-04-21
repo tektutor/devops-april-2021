@@ -20,6 +20,9 @@
    - in case of legacy projects or for other reasons if you can't follow Maven recommended directory structure then
      maven allows configuring pom.xml, settings.xml to override its defaut behaviour
 
+## Maven high level architecture
+
+
 # Commonly used Apache Maven commands
 
 ### Checking maven version
