@@ -45,7 +45,10 @@ mvn test
 ### Deleting target folder
 ```
 mvn clean
+mvn pre-clean
+mvn post-clean
 ```
+Any one of the above commands will list clean life-cycle phases.
 
 ### Creating jar/war/ear depending on the Maven project type
 ```
@@ -63,7 +66,6 @@ mvn deploy
 ```
 
 This requires adding distributionManagement tag in pom.xml file
-
 ```
 <distributionManagement>
      <repository>
@@ -74,7 +76,6 @@ This requires adding distributionManagement tag in pom.xml file
 ```
 
 You also need to provide the artifactory credential in settings.xml file
-
 ```
 <servers>
    <server>
@@ -84,3 +85,10 @@ You also need to provide the artifactory credential in settings.xml file
    </server>
 </servers>
 ```
+
+### Enabling build debug info(verbosity)
+```
+mvn clean deploy -X
+```
+The -X switch helps in troubleshooting issues by enabling verbosity. This can be used with any maven command.
+
