@@ -104,8 +104,12 @@ Create a file named install-nginx.yml with the below code
     - name: Install nginx
       apt: name=nginx state=latest update_cache=yes
       
+ #  - name: Start nginx web server
+ #    service: name=nginx state=started enabled=yes
+ # service module has a bug related to service when ansible nodes are docker container, hence using shell module instead.
+ 
     - name: Start nginx web server
-      service: name=nginx state=started enabled=yes
+      shell:  service nginx start 
 ```
 
 Execute the playbook with the below command
