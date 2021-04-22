@@ -8,7 +8,7 @@ public class HelloTest {
 
 		Hello hello = new Hello();
 
-		String expectedResponse =  "Hello Java !";
+		String expectedResponse =  "Hello Java !!";
 		String actualResponse   = hello.sayHello();
 
 		assertEquals ( expectedResponse, actualResponse );
