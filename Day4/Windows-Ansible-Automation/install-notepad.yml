@@ -1,0 +1,8 @@
+- name: This playbook will install notepad++ on aws windows 2019 ec2 instance
+  hosts: windows
+  tasks:
+    - name: Install notepad++
+      win_chocolatey:
+         name: notepadplusplus
+         force: yes
+         state: latest 

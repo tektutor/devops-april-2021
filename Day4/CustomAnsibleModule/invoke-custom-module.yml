@@ -1,0 +1,14 @@
+- name: This playbook will invoke our custom hello ansible module
+  hosts: all 
+  tasks:
+     - name: Invoke hello module
+       hello: name="Ansible"
+       register: output
+
+     - debug: var=output
+
+     - name: Retrieve IP Address
+       ip_addr:
+       register: output
+
+     - debug: var=output

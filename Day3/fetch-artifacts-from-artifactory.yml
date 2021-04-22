@@ -1,0 +1,9 @@
+- name: Demonstrates fetching artifacts from artifactory
+  hosts: localhost
+  tasks:
+    - name: Fetch file from artifactory
+      get_url:
+         username: admin
+         password: Admin@123
+         url: http://localhost:8082/artifactory/tektutor/org/tektutor/tektutor-hello-app/1.0.0/tektutor-hello-app-1.0.0.jar
+         dest: .

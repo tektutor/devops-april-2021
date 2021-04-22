@@ -1,0 +1,27 @@
+- name: Setup a Domain Controller in AWS EC2 instance(Windows Server 2019)
+  hosts: all
+  vars:
+    - dns_name: tektutor.org
+    - safe_mode_password: admin@123!
+  tasks:
+   - name: install ad
+     win_feature: >
+          name=AD-Domain-Services
+          include_management_tools=yes
+          include_sub_features=yes
+          state=present
+     register: result
+
+   - debug: var=result
+
+   - name: install domain
+     win_domain: >
+        dns_domain_name='{{ dns_name }}'
+        safe_mode_password='{{ safe_mode_password }}'
+     register: ad
+
+   - name: reboot server
+     win_reboot:
+      msg: "Installing AD. Rebooting..."
+      pre_reboot_delay: 15
+     when: ad.changed

@@ -1,0 +1,15 @@
+- name: Add a windows node to tektutor.org domain
+  hosts: windows_client
+  tasks:
+     - name: Join domain
+       win_domain_membership:
+         dns_domain_name: tektutor.org
+         hostname: EC2AMAZ-SM02P8P
+         domain_admin_user: Administrator@tektutor.org
+         domain_admin_password: W)$BmJKqN-AXOKk(qC2(Vw2V8scsQ38d
+         domain_ou_path: "OU=Accounts,DC=tektutor,DC=org"
+         state: domain
+       register: domain_state
+
+     - win_reboot:
+       when: domain_state.reboot_required
