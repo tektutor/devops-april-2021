@@ -126,6 +126,14 @@ Create a file named install-nginx.yml with the below code
     - name: Restart nginx web server to apply above configuration changes
       shell:  service nginx restartExecute the playbook with the below command
 ```
+
+You may copy the default nginx configuration file using one of the below commands
+```
+scp -p 2001 root@localhost:/etc/nginx/sites-available/default .
+scp root@172.17.0.2:/etc/nginx/sites-available/default .
+docker cp ubuntu1:/etc/nginx/sites-available/default .
+```
+
 You may run the playbook with the below command
 ```
 ansible-playbook -i hosts install-nginx.yml
