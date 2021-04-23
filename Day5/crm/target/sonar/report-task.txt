@@ -1,0 +1,6 @@
+projectKey=tektutor
+serverUrl=http://localhost:9000
+serverVersion=8.8.0.42792
+dashboardUrl=http://localhost:9000/dashboard?id=tektutor
+ceTaskId=AXj-BKM9fzneWiH-AI7O
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXj-BKM9fzneWiH-AI7O
