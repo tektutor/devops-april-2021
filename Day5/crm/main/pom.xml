@@ -1,0 +1,31 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.tektutor</groupId>
+	<artifactId>main</artifactId>
+	<version>1.0.0</version>
+
+	<parent>
+		<groupId>org.tektutor</groupId>
+		<artifactId>crm</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.tektutor</groupId>
+			<artifactId>frontend</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.tektutor</groupId>
+			<artifactId>businesslayer</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.tektutor</groupId>
+			<artifactId>dataaccesslayer</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>
