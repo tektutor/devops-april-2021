@@ -25,7 +25,7 @@
 	<distributionManagement>
 		<repository>
 			<id>artifactory</id>
-			<url>http://localhost:8081/artifactory/tektutor</url>
+			<url>http://192.168.18.185:8081/artifactory/tektutor</url>
 		</repository>
 	</distributionManagement>
 </project>
